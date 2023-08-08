@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand-lg bg-light sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand d-lg-none" href="#">
+      <%= link_to root_path do %>
+        <%= image_tag("seeb logo detoure.png", alt: "logo", class: "navbar-logo") %>
+      <% end %>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-start d-lg-none tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav flex-column">
+          <li class="nav-item">
+            <%= link_to "Notre expertise", root_path(anchor: "expertise"), class: 'nav-link active' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Nos réalisations", root_path(anchor: "realisations"), class: 'nav-link active' %>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="mailto:contact@seeb-sa.fr">Contactez-nous</a>
+          </li>
+          <li>
+          <%= link_to root_path do %>
+            <%= image_tag("sodal logo detoure.png", alt: "logo", class: "navbar-logo") %>
+          <% end %>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto me-auto mb-2 mb-lg-0 navbar-nav justify-content-center">
+        <li class="nav-item ms-5">
+          <%= link_to "Notre expertise", root_path(anchor: "expertise"), class: 'nav-link active' %>
+        </li>
+        <li class="nav-item ms-5">
+            <%= link_to "Nos réalisations", root_path(anchor: "realisations"), class: 'nav-link active' %>
+        </li>
+        <li class="nav-item ms-5">
+          <a class="nav-link active" href="mailto:contact@seeb-sa.fr">Contactez-nous</a>
+        </li>
+      </ul>
+      <%= link_to root_path do %>
+        <%= image_tag("sodal logo detoure.png", alt: "logo", class: "navbar-logo") %>
+      <% end %>
+    </div>
+  </div>
+</nav>

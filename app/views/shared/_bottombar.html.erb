@@ -1,0 +1,22 @@
+<div class="padding-top">
+  <div class="bottombar">
+    <div class="row">
+      <div class="col-lg-6 col-12 d-flex flex-column align-items-center">
+        <h4>HORAIRES D'OUVERTURE</h4>
+        <div class="hours">
+          <p><span class="day">Lun - Ven</span> <span class="time">08h - 19h</span></p>
+          <p><span class="day">Sam - Dim</span> <span class="time">Fermé</span></p>
+        </div>
+      </div>
+      <div class="col-lg-6 col-12 d-flex flex-column align-items-center">
+        <h4>A PROPOS</h4>
+        <p>
+        <%= link_to "Accueil", root_path(anchor: "accueil"), class: 'link-style' %>
+        </p>
+          <%= mail_to 'contact@seeb-sa.fr', target: '_blank', class: 'link-style' do %>
+            <p>Contactez-nous</p>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>

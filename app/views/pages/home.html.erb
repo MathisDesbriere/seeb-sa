@@ -1,2 +1,209 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="video-container" id="accueil">
+  <div class="background-image"></div>
+  <div id="player"></div>
+  <h1 id="video-title">La gestion de l'énergie au service de votre confort</h1>
+</div>
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script>
+  var playerHeightOffset = 95.66;
+
+  function adjustVideoContainerHeight() {
+    var screenHeight = window.innerHeight;
+    var newContainerHeight = screenHeight - playerHeightOffset;
+    if (newContainerHeight > 1000 ) {
+      newContainerHeight = 1000
+    }
+    document.querySelector('.video-container').style.height = newContainerHeight + 'px';
+  }
+
+  adjustVideoContainerHeight();
+
+  window.addEventListener('resize', function() {
+    adjustVideoContainerHeight();
+  });
+
+  var options = {
+    id: '845506277',
+    background: true,
+    height: 1000
+  };
+
+  var player = new Vimeo.Player('player', options);
+
+  player.on('play', function() {
+    player.setVolume(0);
+    document.querySelector('.background-image').classList.add('hide-background');
+  });
+
+  player.on('pause', function() {
+    document.querySelector('.background-image').classList.remove('hide-background');
+});
+</script>
+
+<div class="container" >
+  <div class="row">
+    <div class="col-lg-4 col-md-12 mb-3">
+      <div class="icon-container padding-64">
+        <%= image_tag("energy.png", alt: "courant faible", class: "icon-3") %>
+        <h3 class="icon-text blue-text">Courant faible</h3>
+        <p>Solutions de sécurité, communication et de vidéosurveillance conformes aux normes.</p>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-12 mb-3">
+      <div class="icon-container padding-64">
+        <%= image_tag("flash.png", alt: "courant fort", class: "icon-3") %>
+        <h3 class="icon-text blue-text">Courant fort</h3>
+        <p>Distribution industrielle, éclairage puissant et contrôle de machines assurés.</p>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-12 mb-3">
+      <div class="icon-container padding-64">
+        <%= image_tag("chip.png", alt: "courant fort", class: "icon-3") %>
+        <h3 class="icon-text blue-text">Maintenance</h3>
+        <p>Nous proposons un entretien préventif et curatif pour des installations toujours opérationnelles.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="padding-64">
+    <div class="center-text">
+      <h3 class="blue-text">
+        Seeb Génie Électrique
+      </h3>
+      <div class="flex justify-content-center  padding-bottom">
+        <div class="padding-right">
+          <%= link_to 'tel:01.85.10.50.55', target: '_blank', class: 'link-no-style' do %>
+            <i class="fa-solid fa-phone"></i> 01.85.10.50.55
+          <% end %>
+          <br>
+          <%= mail_to 'contact@seeb-sa.fr', target: '_blank', class: 'link-no-style' do %>
+            <i class="fa-solid fa-envelope"></i> contact@seeb-sa.fr
+          <% end %>
+        </div>
+        <div class="padding-left">
+          <%= link_to 'https://www.google.com/maps/place/SEEB/@48.9172902,2.5017642,15z/data=!4m2!3m1!1s0x0:0x5b2692130cd99ee?sa=X&ved=2ahUKEwjeyejDkM2AAxVBVaQEHSJ-BIUQ_BJ6BAhFEAA&ved=2ahUKEwjeyejDkM2AAxVBVaQEHSJ-BIUQ_BJ6BAhUEAc', target: '_blank', class: 'link-no-style' do %>
+            <i class="fa-solid fa-location-dot"></i> 14 Allée de Dublin
+            <br>
+            93320 Les Pavillons-sous-Bois
+          <% end %>
+        </div>
+      </div>
+
+    <div class="map"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="pk.eyJ1IjoibWF0aGlzZHNiciIsImEiOiJjbGtpYWVubHQwZnB4M2dyemJ1NDJpZDVnIn0.n_Jjj1uzBwPwByVAmJDa_w">
+    </div>
+</div>
+
+
+<div class="image-text row">
+  <div class="image-container padding-64 col-lg-6 col-12 order-lg-2">
+    <%= image_tag("electricien.png", alt: "électricien", class: "image-home")  %>
+  </div>
+
+  <div class="text-container padding-64 col-lg-6 col-12 d-flex flex-column justify-content-center align-items-center order-lg-1">
+    <div class="title-image-text">
+      <h3>
+        Des <div class="blue-text-inline">solutions globales</div> pour répondre à tous <div class="blue-text-inline">vos besoins électriques</div>
+      </h3>
+    </div>
+    <div class="body-image-text" id="expertise">
+      <p>
+       Depuis <b>plus de 10 ans</b>, nous sommes des <b>spécialistes de l'électricité</b>, proposant des solutions globales pour la
+       distribution de l'énergie électrique, la gestion des installations et le pilotage des réseaux d'information.
+       </p>
+    </div>
+  </div>
+</div>
+
+
+<div class="image-text row">
+  <div class="image-container padding-64 col-lg-6 col-12">
+    <%= image_tag("led.jpg", alt: "ampoules", class: "image-home")  %>
+  </div>
+
+  <div class="text-container padding-64 col-lg-6 col-12 d-flex flex-column justify-content-center align-items-center">
+    <div class="title-image-text">
+      <h3>
+        Une <div class="blue-text-inline">expertise adaptée</div> à votre environnement
+      </h3>
+    </div>
+    <div class="body-image-text">
+      <p>
+        Avec plusieurs années d'expérience dans les secteurs tertiaire et industriel, <b>nous comprenons</b> l'importance des spécificités
+        propres à <b>chaque environnement</b>. Nous sommes en mesure de vous <b>offrir une réponse complète et adaptée à vos exigences</b> particulières.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="padding-64">
+  <div class="contact row">
+    <div class="col-lg-6 col-12 d-flex flex-column justify-content-center align-items-center">
+      <h3>Un projet ?</h3>
+      <h3>Contactez-nous</h3>
+    </div>
+    <div class="col-lg-6 col-12 d-flex flex-column justify-content-center align-items-center">
+      <%= mail_to "contact@seeb.fr", class: "btn-devis" do %>
+        DEMANDER UN DEVIS
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="padding-64 custom-carousel" id="realisations">
+    <h3>Nos <div class="blue-text-inline">réalisations</div></h3>
+    <p>Notre approche du design vise à créer des installations électriques qui répondent précisément à
+    vos besoins, en alliant fonctionnalité et esthétisme.</p>
+  <div id="carouselExample" class="carousel slide ">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <%= image_tag("real-3.jpg", alt: "realisations", class: "d-block w-100 image-carousel")  %>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag("real-2.jpg", alt: "realisations", class: "d-block w-100 image-carousel")  %>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag("real-1.jpg", alt: "realisations", class: "d-block w-100 image-carousel")  %>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+
+<div class="padding-64 custom-carousel">
+  <h3>Nos <div class="blue-text-inline">partenaires</div></h3>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-6">
+        <%= link_to "https://www.legrand.fr/", target: "_blank" do %>
+          <%= image_tag("legrand.png", alt: "partenaires", class: "partenaires-logo") %>
+        <% end %>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <%= link_to "https://www.se.com/fr/fr/", target: "_blank" do %>
+          <%= image_tag("schneider.png", alt: "partenaires", class: "partenaires-logo") %>
+        <% end %>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <%= link_to "https://new.abb.com/fr", target: "_blank" do %>
+          <%= image_tag("ABB.png", alt: "partenaires", class: "partenaires-logo") %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

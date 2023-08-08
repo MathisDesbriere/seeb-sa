@@ -1,0 +1,34 @@
+h4 {
+  font-family: 'Geologica', sans-serif;
+  font-weight: 300;
+  line-height: 1.5;
+  padding-top: 20px;
+}
+
+.day {
+  background-color: grey;
+  color: white;
+  border-radius: 40px;
+  display: inline-block;
+  padding: 0 0.4rem;
+  white-space: nowrap;
+}
+
+.padding-top {
+  padding-top: 64px;
+}
+
+.bottombar {
+  background-color: rgb(7, 86, 159);
+  color: white;
+}
+
+
+.link-style {
+  text-decoration: none;
+  color: white;
+}
+
+.link-style:hover {
+  color: white;
+}
