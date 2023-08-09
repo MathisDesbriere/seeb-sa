@@ -10,7 +10,40 @@ nav {
 
 
 
-.nav-link:hover {
-  text-decoration: underline #07569F;
-  transition: 0.4s ease-in;
+
+
+@media screen and (max-width: 990px) {
+  .navbar-logo {
+    margin-left: 45px;
+  }
+}
+
+.nav-link {
+  text-decoration: none;
+  letter-spacing: 0.15em;
+  display: inline-block;
+  padding: 15px 20px;
+  position: relative;
+}
+
+.nav-link:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #07569F;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+.nav-link:hover:after {
+  width: 100%;
+  left: 0;
+}
+@media screen and (max-height: 300px) {
+	ul {
+		margin-top: 40px;
+	}
 }
