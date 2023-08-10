@@ -4,43 +4,6 @@
   <h1 id="video-title">La gestion de l'énergie au service de votre confort</h1>
 </div>
 
-<script src="https://player.vimeo.com/api/player.js"></script>
-<script>
-  var playerHeightOffset = 95.66;
-
-  function adjustVideoContainerHeight() {
-    var screenHeight = window.innerHeight;
-    var newContainerHeight = screenHeight - playerHeightOffset;
-    if (newContainerHeight > 1000 ) {
-      newContainerHeight = 1000
-    }
-    document.querySelector('.video-container').style.height = newContainerHeight + 'px';
-  }
-
-  adjustVideoContainerHeight();
-
-  // window.addEventListener('resize', function() {
-  //   adjustVideoContainerHeight();
-  // });
-
-  var options = {
-    id: '845506277',
-    background: true,
-    height: 1000,
-    quality: '1080p'
-  };
-
-  var player = new Vimeo.Player('player', options);
-
-  player.on('play', function() {
-    player.setVolume(0);
-    document.querySelector('.background-image').classList.add('hide-background');
-  });
-
-  player.on('pause', function() {
-    document.querySelector('.background-image').classList.remove('hide-background');
-});
-</script>
 
 <div class="container" >
   <div class="row">
@@ -208,3 +171,43 @@
     </div>
   </div>
 </div>
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script>
+  var playerHeightOffset = 95.66;
+
+  function adjustVideoContainerHeight() {
+    var screenHeight = window.innerHeight;
+    var newContainerHeight = screenHeight - playerHeightOffset;
+    if (newContainerHeight > 1000 ) {
+      newContainerHeight = 1000
+    }
+    document.querySelector('.video-container').style.height = newContainerHeight + 'px';
+  }
+
+  adjustVideoContainerHeight();
+
+  // window.addEventListener('resize', function() {
+  //   adjustVideoContainerHeight();
+  // });
+
+  var options = {
+    id: '845506277',
+    background: true,
+    height: 1000,
+    quality: '1080p'
+  };
+
+  var player = new Vimeo.Player('player', options);
+
+  player.on('play', function() {
+    player.setVolume(0);
+    document.querySelector('.background-image').classList.add('hide-background');
+  });
+
+  player.on('pause', function() {
+    document.querySelector('.background-image').classList.remove('hide-background');
+});
+</script>
+
+
