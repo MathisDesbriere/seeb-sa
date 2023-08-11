@@ -22,7 +22,7 @@
             <%= link_to "Nos réalisations", root_path(anchor: "realisations"), class: 'nav-link active' %>
           </li>
           <li class="nav-item">
-              <%= link_to "Contactez-nous", root_path(anchor: "infos"), class: 'nav-link active' %>
+            <%= link_to "Contactez-nous", root_path(anchor: "infos"), class: 'nav-link active' %>
           </li>
           <li>
           <%= link_to root_path do %>
@@ -39,10 +39,10 @@
           <%= link_to "Notre expertise", root_path(anchor: "expertise"), class: 'nav-link active' %>
         </li>
         <li class="nav-item ms-5">
-            <%= link_to "Nos réalisations", root_path(anchor: "realisations"), class: 'nav-link active' %>
+          <%= link_to "Nos réalisations", root_path(anchor: "realisations"), class: 'nav-link active' %>
         </li>
         <li class="nav-item ms-5">
-            <%= link_to "Contactez-nous", root_path(anchor: "infos"), class: 'nav-link active' %>
+          <%= link_to "Contactez-nous", root_path(anchor: "infos"), class: 'nav-link active' %>
         </li>
       </ul>
       <%= link_to root_path do %>
@@ -56,14 +56,15 @@
   document.addEventListener("DOMContentLoaded", function () {
 
     const offcanvasLinks = document.querySelectorAll(".offcanvas-body .nav-link");
+    console.log(offcanvasLinks)
     const closeBtn = document.querySelector(".btn-close")
 
-    offcanvasLinks.forEach(function (link) {
+    offcanvasLinks.forEach(link => {
       link.addEventListener("click", function () {
         setTimeout(function () {
           closeBtn.click();
         }, 200);
-      });
+      })
     });
   });
 </script>
