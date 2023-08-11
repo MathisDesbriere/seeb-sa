@@ -269,32 +269,6 @@ h4 {
 
 }
 
-
-@media screen and (max-width: 300px) {
-  #player {
-    left: -220%;
-  }
-}
-
-
-@media screen and (min-width: 300px) and (max-width: 430px) {
-  #player {
-    left: -140%;
-  }
-}
-
-@media screen and (min-width: 430px) and (max-width: 600px) {
-  #player {
-    left: -80%;
-  }
-}
-
-@media screen and (min-width: 600px) and (max-width: 768px) {
-  #player {
-    left: -50%;
-  }
-}
-
 @media screen and (max-width: 850px) {
   #video-title {
     font-size: 30px;
@@ -303,13 +277,46 @@ h4 {
 }
 
 
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (max-width: 300px) {
+  #player {
+    left: -60%;
+  }
+}
+
+
+@media screen and (min-width: 300px) and (max-width: 400px) {
+  #player {
+    left: -40%;
+  }
+}
+
+@media screen and (min-width: 400px) and (max-width: 460px) {
+  #player {
+    left: -20%;
+  }
+}
+
+@media screen and (min-width: 561px) and (max-width: 640px) {
+  #player {
+    left: -70%;
+  }
+}
+
+@media screen and (min-width: 640px) and (max-width: 769px) {
+  #player {
+    left: -50%;
+  }
+}
+
+
+
+@media screen and (min-width: 770px) and (max-width: 1024px) {
   #player {
     left: -30%;
   }
 }
 
-@media screen and (min-width: 1023px) and (max-width: 1300px) {
+@media screen and (min-width: 1025px) and (max-width: 1300px) {
   #player {
     left: -8%;
   }
@@ -392,7 +399,7 @@ h4 {
 
 @media screen and (min-height: 800px) and (max-height: 930px) {
   #player {
-    top: -20%;
+    top: -15%;
   }
 }
 

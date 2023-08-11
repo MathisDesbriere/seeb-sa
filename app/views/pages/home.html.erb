@@ -32,7 +32,7 @@
   </div>
 </div>
 
-<div class="padding-64">
+<div class="padding-64" id="infos">
     <div class="center-text">
       <h3 class="blue-text">
         Seeb Génie Électrique
@@ -191,12 +191,19 @@
   //   adjustVideoContainerHeight();
   // });
 
-  var options = {
+  if (window.innerWidth < 560) {
+    var options = {
+    id: '853669547',
+    background: true,
+    height: 1000,
+  };
+  } else {
+    var options = {
     id: '845506277',
     background: true,
     height: 1000,
-    quality: '1080p'
   };
+  }
 
   var player = new Vimeo.Player('player', options);
 
@@ -209,5 +216,3 @@
     document.querySelector('.background-image').classList.remove('hide-background');
 });
 </script>
-
-
